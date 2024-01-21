@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PPadillaT5.Vistas.vPrincipal"
+             Title="vPrincipal">
+    <VerticalStackLayout Padding="25" Spacing="25">
+        <Label 
+            Text="Base de datos SQlite!"
+            TextColor="Red"
+            FontSize="20"
+           HorizontalTextAlignment="Center"
+           />
+        <Entry x:Name="txtId"  Keyboard="Numeric"
+              Placeholder="Ingresar ID"></Entry>
+
+        <Entry x:Name="txtName"
+               Placeholder="Ingrese nombre"
+             />
+        <Grid RowSpacing="1">
+            <Grid.RowDefinitions>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition ></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition>
+
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnInsertar"  Text="Ingresar" TextColor="Black" Grid.Row="0" Grid.Column="0" Clicked="btnInsertar_Clicked"></Button>
+            <Label x:Name="lblMensaje" Grid.Row="1" Grid.Column="0"></Label>
+
+            <Button x:Name="btnMostrar" Text="Mostrar" TextColor="Black" Grid.Row="2" Grid.Column="0" Clicked="btnMostrar_Clicked"></Button>
+
+            <CollectionView x:Name="listPerson" HorizontalOptions="Center" Grid.Row="3" Grid.Column="0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition>
+
+                                </RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*">
+                                </ColumnDefinition>
+                                <ColumnDefinition Width="2*">
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Id}" Grid.Row="0" Grid.Column="0"></Label>
+                            <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="1"></Label>
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+        <Button x:Name="btnEliminar" Text="Eliminar" TextColor="Black" Clicked="btnEliminar_Clicked"></Button>
+        <Button x:Name="btnEditar" Text="Actualizar" TextColor="Black" Clicked="btnEditar_Clicked"></Button>
+
+    </VerticalStackLayout>
+</ContentPage> ntPage>
